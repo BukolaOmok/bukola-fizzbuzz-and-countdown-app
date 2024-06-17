@@ -11,7 +11,7 @@ export default function App() {
   }
 
   function reset() {
-    setPresentCount(0);
+    setPresentCount(1);
   }
 
   return (
