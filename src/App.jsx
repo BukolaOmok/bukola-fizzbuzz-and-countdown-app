@@ -3,7 +3,7 @@ import "./App.css";
 
 export default function App() {
   const count = () => {
-  const countArray = [];
+    const countArray = [];
     for (let i = 1; i <= 15; i++) {
       if (i % 3 === 0 && i % 5 === 0) {
         countArray.push("FizzBuzz");
@@ -21,7 +21,7 @@ export default function App() {
   const [presentIndex, setPresentIndex] = React.useState(0);
 
   function next() {
-    if (presentIndex < fizzBuzzArray.length -1) {
+    if (presentIndex < fizzBuzzArray.length - 1) {
       setPresentIndex(presentIndex + 1);
     }
   }
