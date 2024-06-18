@@ -1,7 +1,7 @@
 import "../App.css";
 import React from "react"
 
-const FizzBuzzBreakDown = (i) => {
+const fizzBuzzBreakDown = (i) => {
   if (i % 3 === 0 && i % 5 === 0) {
     return"FizzBuzz";
   } else if (i % 5 === 0) {
@@ -30,7 +30,7 @@ const FizzBuzzBreakDown = (i) => {
         Next
       </button>
       <div className="update--content">
-        <h1>{FizzBuzzBreakDown(presentCount)}</h1>
+        <h1>{fizzBuzzBreakDown(presentCount)}</h1>
       </div>
       <button className="update--reset" onClick={reset}>
         Reset

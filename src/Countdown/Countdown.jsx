@@ -9,8 +9,12 @@ export default function Countdown() {
   let countdownNumber = generateRandomCountdownNumber(5, 15);
   const [presentNumber, setPresentNumber] = React.useState(countdownNumber);
 
-  function decrement() {
-    setPresentNumber(presentNumber - 1);
+  function decrement() { 
+    if (presentNumber <= 0) {
+    return 0;
+  } else {
+    return setPresentNumber(presentNumber - 1);
+  }
   }
 
   function reset() {
@@ -23,7 +27,7 @@ export default function Countdown() {
         Decrement
       </button>
       <div className="countdown--update--content">
-        <h1>{CountdownBreakdown(presentNumber)}</h1>
+        <h1>{countdownBreakdown(presentNumber)}</h1>
       </div>
       <button className="count--down--update--reset" onClick={reset}>
         Reset
@@ -32,12 +36,11 @@ export default function Countdown() {
   );
 }
 
-const CountdownBreakdown = (countdownNumber) => {
+const countdownBreakdown = (countdownNumber) => {
   if (countdownNumber === 1) {
     return "👩🏽‍🚀";
-  } else if (countdownNumber <= 0) {
-    countdownNumber = 0;
+  } else if (countdownNumber === 0){
     return "🚀";
-  }
-  return countdownNumber;
+  } 
+    return countdownNumber
 };
